@@ -1,0 +1,8 @@
+/* ============================================
+   checkout.css — checkout.php-ისთვის.
+   (shop-section wrapper საჭიროა padding/სათაურისთვის;
+   ფორმის სტილები უკვე base.css-შია: .admin-form, .form-row და ა.შ.)
+   ============================================ */
+.shop-section{ max-width:var(--container); margin:0 auto; padding:50px 24px 90px; }
+.shop-section .section-title{ text-align:left; margin-bottom:40px; }
+.shop-section .section-title::after{ margin:14px 0 0; }

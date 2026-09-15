@@ -1,0 +1,115 @@
+/* ============================================
+   home.css — მხოლოდ index.php-ისთვის.
+   base.css-ის შემდეგ იტვირთება.
+   ============================================ */
+
+/* ============ Hero ============ */
+.hero{
+  position:relative;
+  min-height:640px;
+  display:flex; align-items:center; justify-content:center;
+  background:linear-gradient(160deg, var(--ink) 0%, var(--accent) 130%);
+  overflow:hidden;
+  padding:60px 24px;
+}
+.hero__frame{
+  position:absolute; inset:0;
+  display:flex; align-items:flex-end; justify-content:center;
+  opacity:.14;
+}
+.hero__mono{
+  font-family:var(--font-display); font-style:italic;
+  font-size:min(46vw,560px); line-height:.8; color:var(--gold);
+  transform:translateY(18%);
+}
+.hero__content{
+  position:relative; z-index:2; text-align:center; max-width:640px; color:var(--white);
+}
+.hero__content h1{
+  font-size:clamp(38px,6vw,68px); color:var(--white); margin-bottom:18px; line-height:1.05;
+}
+.hero__content p{
+  font-size:16px; color:var(--blush); margin-bottom:32px; letter-spacing:.02em;
+}
+
+/* ============ Categories (arch signature) ============ */
+.categories{ max-width:var(--container); margin:0 auto; padding:90px 24px 40px; }
+.categories__grid{
+  display:grid; grid-template-columns:repeat(4,1fr); gap:var(--gap);
+}
+.category-card{ text-align:center; display:flex; flex-direction:column; align-items:center; }
+.category-card__arch{
+  width:100%; aspect-ratio:3/4;
+  border-radius:var(--radius-arch);
+  background:linear-gradient(150deg, var(--blush), var(--gold) 140%);
+  display:flex; align-items:center; justify-content:center;
+  margin-bottom:18px;
+  transition:transform .35s ease;
+  overflow:hidden;
+}
+.category-card:hover .category-card__arch{ transform:translateY(-6px); }
+.category-card__mono{
+  font-family:var(--font-display); font-style:italic; font-size:56px; color:var(--white);
+  mix-blend-mode:overlay;
+}
+.category-card__name{
+  font-family:var(--font-display); font-size:20px; margin-bottom:6px;
+}
+.category-card__view{
+  font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--accent);
+  border-bottom:1px solid transparent;
+}
+.category-card:hover .category-card__view{ border-color:var(--accent); }
+
+/* ============ Product section wrapper (New In / Shoes) ============ */
+.product-section{ max-width:var(--container); margin:0 auto; padding:60px 24px; }
+.product-section__head{
+  display:flex; align-items:baseline; justify-content:space-between; margin-bottom:36px;
+}
+.product-section__head .section-title{ margin-bottom:0; text-align:left; }
+.product-section__head .section-title::after{ margin:14px 0 0; }
+
+/* ============ Brand story ============ */
+.story{
+  max-width:var(--container); margin:20px auto 90px; padding:0 24px;
+  display:grid; grid-template-columns:0.9fr 1.1fr; gap:60px; align-items:center;
+}
+.story__frame{
+  aspect-ratio:4/5; border-radius:var(--radius-arch);
+  background:linear-gradient(160deg,var(--gold),var(--accent) 150%);
+  display:flex; align-items:center; justify-content:center;
+}
+.story__mono{ font-family:var(--font-display); font-style:italic; font-size:88px; color:rgba(255,255,255,.85); }
+.story__content p{
+  font-family:var(--font-display); font-size:24px; line-height:1.5; margin-bottom:22px;
+}
+
+/* ============ Press ============ */
+.press{ max-width:var(--container); margin:0 auto; padding:60px 24px 90px; }
+.press__grid{ display:grid; grid-template-columns:1fr 1fr; gap:var(--gap); }
+.press blockquote{
+  margin:0; padding:34px; background:var(--white); border:1px solid var(--blush);
+  text-align:center;
+}
+.press blockquote p{ font-family:var(--font-display); font-size:20px; font-style:italic; line-height:1.5; margin-bottom:16px; }
+.press cite{ font-style:normal; font-size:12px; letter-spacing:.2em; color:var(--accent); }
+
+/* ============ Instagram banner ============ */
+.insta-banner{ display:grid; grid-template-columns:repeat(3,1fr); }
+.insta-banner__item{
+  aspect-ratio:1/1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px;
+  background:var(--blush); color:var(--ink); text-align:center; font-size:12px; letter-spacing:.1em; text-transform:uppercase;
+}
+.insta-banner__item--center{ background:var(--ink); color:var(--bg); }
+.insta-banner__mono{ font-family:var(--font-display); font-style:italic; font-size:34px; }
+
+/* ============ Responsive ============ */
+@media (max-width:960px){
+  .categories__grid{ grid-template-columns:repeat(2,1fr); }
+  .story{ grid-template-columns:1fr; }
+  .press__grid{ grid-template-columns:1fr; }
+}
+@media (max-width:600px){
+  .categories__grid{ grid-template-columns:repeat(2,1fr); gap:16px; }
+  .insta-banner{ grid-template-columns:1fr; }
+}

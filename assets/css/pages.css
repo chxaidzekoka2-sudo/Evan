@@ -1,0 +1,8 @@
+/* ============================================
+   pages.css — სტატიკური გვერდები (about, contact, terms,
+   returns, privacy, shipping, size-guide, stores, profile).
+   ============================================ */
+.shop-section{ max-width:var(--container); margin:0 auto; padding:50px 24px 90px; }
+.shop-section .section-title{ text-align:left; margin-bottom:40px; }
+.shop-section .section-title::after{ margin:14px 0 0; }
+.shop-section p{ line-height:1.7; font-size:15px; }

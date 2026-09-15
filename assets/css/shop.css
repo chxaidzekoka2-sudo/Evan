@@ -1,0 +1,48 @@
+/* ============================================
+   shop.css — მხოლოდ shop.php-ისთვის (ფილტრები, layout).
+   base.css-ის შემდეგ იტვირთება.
+   ============================================ */
+
+.shop-section{ max-width:var(--container); margin:0 auto; padding:50px 24px 90px; }
+.shop-section .section-title{ text-align:left; margin-bottom:40px; }
+.shop-section .section-title::after{ margin:14px 0 0; }
+
+.shop-layout{
+  display:grid; grid-template-columns:240px 1fr; gap:44px; align-items:start;
+}
+
+.filter-panel{
+  border:1px solid var(--blush); padding:26px 22px; position:sticky; top:100px;
+}
+.filter-group{ margin-bottom:26px; }
+.filter-group h4{
+  font-family:var(--font-body); font-size:12px; letter-spacing:.12em; text-transform:uppercase;
+  color:var(--accent); margin-bottom:14px;
+}
+.filter-options{ display:flex; flex-direction:column; gap:2px; }
+.filter-options--pills{ flex-direction:row; flex-wrap:wrap; gap:8px; }
+
+.filter-pill{
+  background:none; border:1px solid var(--blush); color:var(--ink);
+  font-size:13px; padding:8px 12px; text-align:left; letter-spacing:.02em;
+  transition:border-color .2s ease, background .2s ease;
+}
+.filter-options--pills .filter-pill{ text-align:center; padding:6px 12px; }
+.filter-pill:hover{ border-color:var(--gold); }
+.filter-pill.is-active{ background:var(--ink); color:var(--bg); border-color:var(--ink); }
+
+.filter-price-inputs{ display:flex; align-items:center; gap:10px; }
+.filter-price-inputs input{
+  width:100%; border:1px solid var(--blush); background:none; padding:9px 10px; font-size:13px; color:var(--ink);
+}
+.filter-price-inputs span{ color:var(--gold); }
+
+.filter-actions{ display:flex; flex-direction:column; gap:10px; }
+
+.shop-results .product-grid{ grid-template-columns:repeat(3,1fr); }
+
+@media (max-width:960px){
+  .shop-layout{ grid-template-columns:1fr; }
+  .filter-panel{ position:static; }
+  .shop-results .product-grid{ grid-template-columns:repeat(2,1fr); }
+}

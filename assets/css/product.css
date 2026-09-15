@@ -1,0 +1,56 @@
+/* ============================================
+   product.css — product.php-ისთვის (პროდუქტის დეტალური გვერდი).
+   ============================================ */
+
+.product-detail{
+  max-width:var(--container); margin:0 auto; padding:50px 24px 90px;
+}
+
+.product-detail__layout{
+  display:grid; grid-template-columns:1.1fr 0.9fr; gap:52px; align-items:start;
+}
+
+/* --- გალერეა --- */
+.product-gallery__main{
+  aspect-ratio:3/4; border-radius:var(--radius-arch); overflow:hidden;
+  background:var(--blush); margin-bottom:14px;
+}
+.product-gallery__main img{ width:100%; height:100%; object-fit:cover; }
+
+.product-gallery__thumbs{ display:flex; gap:10px; flex-wrap:wrap; }
+.product-gallery__thumbs img{
+  width:72px; height:90px; object-fit:cover; border:1px solid var(--blush); cursor:pointer;
+  opacity:.6; transition:opacity .2s ease, border-color .2s ease;
+}
+.product-gallery__thumbs img.is-active{ opacity:1; border-color:var(--ink); }
+
+/* --- ინფო პანელი --- */
+.product-info__category{
+  font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); margin-bottom:10px; display:block;
+}
+.product-info__name{ font-size:clamp(28px,3vw,38px); margin-bottom:14px; }
+.product-info__price{ font-size:22px; color:var(--accent); margin-bottom:26px; display:block; }
+.product-info__description{ font-size:14px; line-height:1.7; opacity:.85; margin-bottom:30px; }
+
+.product-info__sizes{ margin-bottom:26px; }
+.product-info__sizes h4{
+  font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:var(--accent); margin-bottom:12px;
+}
+.product-info__size-pills{ display:flex; flex-wrap:wrap; gap:8px; }
+.size-pill--detail{
+  border:1px solid var(--ink); background:none; padding:9px 16px; font-size:13px; color:var(--ink);
+}
+.size-pill--detail.is-active{ background:var(--ink); color:var(--bg); }
+.size-pill--detail:disabled{
+  border-color:var(--blush); color:var(--blush); text-decoration:line-through; cursor:not-allowed;
+}
+
+.product-info__stock-msg{ font-size:12px; margin-top:10px; color:var(--accent); }
+.product-info__added-msg{
+  font-size:13px; margin-top:14px; color:#2E7D32; display:none;
+}
+.product-info__added-msg.is-visible{ display:block; }
+
+@media (max-width:860px){
+  .product-detail__layout{ grid-template-columns:1fr; }
+}
